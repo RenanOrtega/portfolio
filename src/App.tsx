@@ -1,3 +1,4 @@
+import Collaborate from "./components/Collaborate"
 import Hero from "./components/Hero"
 import Navbar from "./components/Navbar"
 import Projects from "./components/Projects"
@@ -20,7 +21,9 @@ function App() {
         <Skills />
       </div>
       <div className="min-h-screen flex flex-col">
-        <SectionDescription description="Creative technologist driven to craft innovative digital experiences blending design and code with real business results." />
+        <hr className="my-4 border-gray-300" />
+        <Collaborate />
+        <hr className="my-4 border-gray-300" />
       </div>
     </div>
   )
