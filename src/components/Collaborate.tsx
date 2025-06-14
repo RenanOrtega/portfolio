@@ -1,3 +1,5 @@
+import StarBorder from "../Animations/StarBorder/StarBorder";
+
 const Collaborate = () => {
     return (
         <div className="flex flex-col justify-center gap-5 items-center py-30">
@@ -5,10 +7,15 @@ const Collaborate = () => {
             <p className="text-gray-500 text-3xl text-center">
                 Get in touch for projects or partnerships.
             </p>
-            <div className="bg-black hover:bg-neutral-800 font-semibold transition text-white rounded-2xl">
-                <button className="px-3 py-1 cursor-pointer">
-                    Contact Me
-                </button>
+            <StarBorder
+                as="button"
+                className="custom-class"
+                color="cyan"
+                speed="5s"
+            >
+                Contact Me
+            </StarBorder>
+            <div className="font-semibold transition text-white rounded-2xl">
             </div>
         </div>
     );
