@@ -8,6 +8,16 @@ const items = [
         image: "/stickers-collection.png",
         title: "Stickers Collection - E-Commerce",
         year: "2025"
+    },
+    {
+        image: "/admin-stickers.png",
+        title: "Stickers Collection - Panel Admin",
+        year: "2025"
+    },
+    {
+        image: "/stickers-collection.png",
+        title: "Stickers Collection - E-Commerce",
+        year: "2025"
     }
 ]
 

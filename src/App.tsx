@@ -1,7 +1,8 @@
 import Hero from "./components/Hero"
 import Navbar from "./components/Navbar"
-import Projects from "./components/projects/Projects"
+import Projects from "./components/Projects"
 import SectionDescription from "./components/SectionDescription"
+import Skills from "./components/Skills"
 
 function App() {
 
@@ -14,6 +15,12 @@ function App() {
       <div className="min-h-screen flex flex-col">
         <SectionDescription description="A selection of my favorite work across design and development, with a focus on impactful, modern solutions." />
         <Projects />
+      </div>
+      <div className="min-h-screen flex flex-col justify-center">
+        <Skills />
+      </div>
+      <div className="min-h-screen flex flex-col">
+        <SectionDescription description="Creative technologist driven to craft innovative digital experiences blending design and code with real business results." />
       </div>
     </div>
   )
