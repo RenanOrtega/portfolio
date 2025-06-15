@@ -5,29 +5,42 @@ import Navbar from "./components/Navbar"
 import Projects from "./components/Projects"
 import SectionDescription from "./components/SectionDescription"
 import Skills from "./components/Skills"
+import { TracingBeam } from "./components/ui/tracing-beam"
 
 function App() {
   return (
     <div className="px-8 py-6 md:px-30">
-      <div className="min-h-screen flex flex-col">
-        <Navbar />
-        <Hero />
-      </div>
+      {/* Hero Section */}
+      <Navbar />
+      <TracingBeam
+        className="pb-20"
+      >
+        <section className="min-h-screen flex flex-col justify-center pt-20">
+          <Hero />
+        </section>
 
-      <div className="min-h-screen flex flex-col" id="projects">
-        <SectionDescription description="A selection of my favorite work across design and development, with a focus on impactful, modern solutions." />
-        <Projects />
-      </div>
+        <div className="mx-auto antialiased relative">
+          {/* Projects Section */}
+          <section className="min-h-screen flex flex-col" id="projects">
+            <SectionDescription
+              description="A selection of my favorite work across design and development, with a focus on impactful, modern solutions."
+            />
+            <Projects />
+          </section>
 
-      <div className="min-h-screen flex flex-col justify-center" id="skills">
-        <Skills />
-      </div>
+          {/* Skills Section */}
+          <section className="min-h-screen flex flex-col justify-center" id="skills">
+            <Skills />
+          </section>
 
-      {/* Seção Collaborate com min-h-screen */}
-      <div className="min-h-screen flex flex-col justify-center" id="contact">
-        <Collaborate />
-      </div>
+          {/* Contact Section */}
+          <section className="min-h-screen flex flex-col justify-center" id="contact">
+            <Collaborate />
+          </section>
+        </div>
+      </TracingBeam>
 
+      {/* Footer */}
       <Footer />
     </div>
   )

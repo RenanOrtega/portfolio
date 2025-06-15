@@ -5,7 +5,7 @@ import CardPin from "./ui/card-pin";
 
 const AnimatedPin = () => {
     return (
-        <div className="w-full flex flex-col md:flex-row items-center justify-center">
+        <div className="flex flex-col lg:flex-row items-center justify-center">
             <PinContainer
                 title="/RenanOrtega"
                 href="https://github.com/RenanOrtega"

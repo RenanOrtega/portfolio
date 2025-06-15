@@ -1,4 +1,5 @@
 import AnimatedPin from "./AnimatedPin";
+import { Button } from "./ui/moving-border";
 
 const Collaborate = () => {
     return (
@@ -7,9 +8,12 @@ const Collaborate = () => {
             <p className="text-gray-500 text-3xl text-center">
                 Get in touch for projects or partnerships.
             </p>
-            <div className="bg-black hover:bg-neutral-800 font-semibold transition text-white rounded-2xl px-3 py-1">
+            <Button
+                borderRadius="1.75rem"
+                className=""
+            >
                 Social Medias
-            </div>
+            </Button>
             <AnimatedPin />
         </div>
     );
