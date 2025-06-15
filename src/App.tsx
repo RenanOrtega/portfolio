@@ -8,7 +8,7 @@ import Skills from "./components/Skills"
 
 function App() {
   return (
-    <div className="px-8 py-6">
+    <div className="px-8 py-6 md:px-30">
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <Hero />
