@@ -14,9 +14,9 @@ function App() {
       <section className="min-h-screen relative flex flex-col">
         <div className="absolute inset-0 w-full h-full z-0">
           <Silk
-            speed={5}
-            scale={1}
-            color="#7B7481"
+            speed={3}
+            scale={0.8}
+            color="#4D4D4D"
             noiseIntensity={1.5}
             rotation={0}
           />
