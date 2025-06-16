@@ -15,7 +15,7 @@ function App() {
           <Silk
             speed={3}
             scale={0.8}
-            color="#2D2D2D"
+            color="#3D3D3D"
             noiseIntensity={1.5}
             rotation={0}
           />

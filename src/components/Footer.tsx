@@ -38,7 +38,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <p className="text-gray-400 text-sm">
+                <p className="text-gray-400 text-sm pt-5">
                     © 2024 Seu Nome. Todos os direitos reservados.
                 </p>
             </footer>

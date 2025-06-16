@@ -17,6 +17,8 @@ interface CardPinProps {
     iconSize?: number;
     gradient?: keyof typeof gradients;
     customColor?: string;
+    width?: string;
+    height?: string;
 }
 
 const CardPin = ({
@@ -24,20 +26,25 @@ const CardPin = ({
     iconPath, 
     iconSize = 50, 
     gradient = "purple", 
-    customColor
+    customColor,
+    width,
+    height
 }: CardPinProps) => {
     // Se customColor for fornecido, usa ele; senão usa o gradient pré-definido
     const backgroundClass = customColor 
         ? customColor 
         : `bg-gradient-to-br ${gradients[gradient]}`;
 
+    const widthClass = width ? width : `w-[10rem]`;
+    const heightClass = height ? height : `h-[10rem]`;
+
     return (
-        <div className="flex basis-full flex-col tracking-tight text-slate-100/50 sm:basis-1/2 w-[10rem] h-[10rem] ">
+        <div className={`flex basis-full flex-col tracking-tight text-slate-100/50 sm:basis-1/2 ${widthClass} ${heightClass}`}>
             <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-slate-100">
                 {title}
             </h3>
             <div
-                className={`flex justify-center items-center flex-1 w-full rounded-lg mt-4 ${backgroundClass}`}
+                className={`flex justify-center items-center flex-1 w-full mt-4 ${backgroundClass}`}
             >
                 <img src={iconPath} width={iconSize} height={iconSize} alt={title} />
             </div>

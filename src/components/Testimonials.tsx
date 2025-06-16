@@ -4,8 +4,8 @@ const Testimonials = () => {
     return (
         <InfiniteMovingCards
             items={testimonials}
-            direction="right"
-            speed="slow"
+            direction="left"
+            speed="normal"
         />
     );
 }
