@@ -1,4 +1,4 @@
-import { Cloud, Crown, Database, LucidePencil, Server, Star } from "lucide-react";
+import { Cloud, Database, LucidePencil, Server } from "lucide-react";
 import { useState } from "react";
 
 const Skills = () => {
