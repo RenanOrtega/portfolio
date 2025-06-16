@@ -10,7 +10,9 @@ const Collaborate = () => {
                 Get in touch for projects or partnerships.
             </p>
             <div className="pb-5">
-                <Button>
+                <Button
+                    borderRadius="0"
+                >
                     Social Medias
                 </Button>
             </div>

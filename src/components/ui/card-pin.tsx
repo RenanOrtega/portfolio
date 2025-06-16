@@ -44,7 +44,7 @@ const CardPin = ({
                 {title}
             </h3>
             <div
-                className={`flex justify-center items-center flex-1 w-full rounded-lg mt-4 ${backgroundClass}`}
+                className={`flex justify-center items-center flex-1 w-full mt-4 ${backgroundClass}`}
             >
                 <img src={iconPath} width={iconSize} height={iconSize} alt={title} />
             </div>
