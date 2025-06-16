@@ -1,11 +1,13 @@
 import Silk from "./blocks/Backgrounds/Silk/Silk"
 import Collaborate from "./components/Collaborate"
+import Divider from "./components/Divider"
 import Footer from "./components/Footer"
 import Hero from "./components/Hero"
 import Navbar from "./components/Navbar"
 import Projects from "./components/Projects"
 import SectionDescription from "./components/SectionDescription"
 import Skills from "./components/Skills"
+import Testimonials from "./components/Testimonials"
 import { TracingBeam } from "./components/ui/tracing-beam"
 
 function App() {
@@ -31,31 +33,45 @@ function App() {
           </div>
         </div>
       </section>
-      <div className="px-8 py-6 md:px-30">
-        <TracingBeam className="pb-20">
-          <div className="mx-auto antialiased relative">
-            {/* Projects Section */}
-            <section className="min-h-screen flex flex-col" id="projects">
+      <div>
+
+        <div className="mx-auto antialiased relative bg-neutral-900">
+          {/* Projects Section */}
+          {/* <section className="min-h-screen flex flex-col px-8 py-6 md:px-30" id="projects">
               <SectionDescription
                 description="A selection of my favorite work across design and development, with a focus on impactful, modern solutions."
               />
               <Projects />
-            </section>
+            </section> */}
+          <section className="min-h-screen">
+            <div className="flex flex-col antialiased relative overflow-hidden">
+              <div className="flex justify-start px-8 py-6 md:px-30">
+                <SectionDescription
+                  title="Testimonials"
+                  description="A selection of my favorite work across design and development, with a focus on impactful, modern solutions."
+                />
+              </div>
+              <div className="flex justify-center">
+                <Testimonials />
+              </div>
+            </div>
+          </section>
+          {/* Skills Section */}
+          <section className="min-h-screen flex flex-col justify-center" id="skills">
+            <Skills />
+          </section>
 
-            {/* Skills Section */}
-            <section className="min-h-screen flex flex-col justify-center" id="skills">
-              <Skills />
-            </section>
-
-            {/* Contact Section */}
-            <section className="min-h-screen flex flex-col justify-center" id="contact">
-              <Collaborate />
-            </section>
-          </div>
-        </TracingBeam>
+          {/* Contact Section */}
+          <section className="min-h-screen flex flex-col justify-center" id="contact">
+            <Collaborate />
+          </section>
+        </div>
 
         {/* Footer */}
-        <Footer />
+        <div className="bg-neutral-950 px-8 py-6 md:px-30">
+          <Footer />
+        </div>
+
       </div>
     </>
   )
