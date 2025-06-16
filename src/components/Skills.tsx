@@ -1,4 +1,4 @@
-import { Cloud, Database, LucidePencil, Server } from "lucide-react";
+import { Cloud, Crown, Database, LucidePencil, Server, Star } from "lucide-react";
 import { useState } from "react";
 
 const Skills = () => {
@@ -27,6 +27,7 @@ const Skills = () => {
                     onMouseEnter={() => setLineColor("bg-green-400")}
                     onMouseLeave={() => setLineColor("bg-white/20")}
                 >
+                    {/* <Star fill="yellow" /> */}
                     <Server width={50} height={50} className="font-bold md:w-16 md:h-16 lg:w-20 lg:h-20" />
                     <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-green-400/20 to-transparent pointer-events-none border-2 border-green-500"></div>
                 </div>

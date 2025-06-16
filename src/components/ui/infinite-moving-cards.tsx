@@ -14,6 +14,7 @@ export const InfiniteMovingCards = ({
     quote: string;
     name: string;
     title: string;
+    imagePath: string;
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
@@ -95,19 +96,28 @@ export const InfiniteMovingCards = ({
                 aria-hidden="true"
                 className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
               ></div>
+
+              {/* Foto + Nome + Título */}
+              <div className="relative z-20 flex items-center gap-4 mb-5 pb-3">
+                <img
+                  src={item.imagePath}
+                  alt={item.name}
+                  className="h-16 w-16 rounded-full object-cover"
+                />
+                <div className="flex flex-col">
+                  <span className="text-sm font-medium text-neutral-800 dark:text-gray-100">
+                    {item.name}
+                  </span>
+                  <span className="text-sm text-neutral-500 dark:text-gray-400">
+                    {item.title}
+                  </span>
+                </div>
+              </div>
+
+              {/* Quote */}
               <span className="relative z-20 text-sm leading-[1.6] font-normal text-neutral-800 dark:text-gray-100">
                 {item.quote}
               </span>
-              <div className="relative z-20 mt-6 flex flex-row items-center">
-                <span className="flex flex-col gap-1">
-                  <span className="text-sm leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
-                    {item.name}
-                  </span>
-                  <span className="text-sm leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
-                    {item.title}
-                  </span>
-                </span>
-              </div>
             </blockquote>
           </li>
         ))}

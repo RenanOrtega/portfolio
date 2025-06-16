@@ -1,14 +1,11 @@
 import Silk from "./blocks/Backgrounds/Silk/Silk"
 import Collaborate from "./components/Collaborate"
-import Divider from "./components/Divider"
 import Footer from "./components/Footer"
 import Hero from "./components/Hero"
 import Navbar from "./components/Navbar"
-import Projects from "./components/Projects"
 import SectionDescription from "./components/SectionDescription"
 import Skills from "./components/Skills"
 import Testimonials from "./components/Testimonials"
-import { TracingBeam } from "./components/ui/tracing-beam"
 
 function App() {
   return (
@@ -18,7 +15,7 @@ function App() {
           <Silk
             speed={3}
             scale={0.8}
-            color="#4D4D4D"
+            color="#2D2D2D"
             noiseIntensity={1.5}
             rotation={0}
           />
