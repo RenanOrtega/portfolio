@@ -9,6 +9,7 @@ const AnimatedPin = () => {
             <PinContainer
                 title="/RenanOrtega"
                 href="https://github.com/RenanOrtega"
+                shadowColor="rgba(168, 85, 247, 0.4)"
             >
                 <CardPin
                     title="GitHub"
@@ -19,6 +20,7 @@ const AnimatedPin = () => {
             <PinContainer
                 title="/in/renan-ortega"
                 href="https://www.linkedin.com/in/renan-ortega/"
+                shadowColor="rgba(59, 130, 246, 0.4)"
             >
                 <CardPin
                     title="Linkedin"
@@ -28,7 +30,9 @@ const AnimatedPin = () => {
             </PinContainer>
             <PinContainer 
                 title="+55 11 95331-8009"
-                href="https://wa.me/5511953318009">
+                href="https://wa.me/5511953318009"
+                shadowColor="rgba(34, 197, 94, 0.4)"
+            >
                 <CardPin
                     title="WhatsApp"
                     iconPath="whatsapp.svg"
