@@ -13,7 +13,7 @@ const AnimatedPin = () => {
                 <CardPin
                     title="GitHub"
                     iconPath="github.svg"
-                    customColor="bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600"
+                    customColor="bg-light"
                 />
             </PinContainer>
             <PinContainer
@@ -23,7 +23,7 @@ const AnimatedPin = () => {
                 <CardPin
                     title="Linkedin"
                     iconPath="linkedin.svg"
-                    customColor="bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600"
+                    customColor="bg-light"
                 />
             </PinContainer>
             <PinContainer 
@@ -32,7 +32,7 @@ const AnimatedPin = () => {
                 <CardPin
                     title="WhatsApp"
                     iconPath="whatsapp.svg"
-                    customColor="bg-gradient-to-br from-green-400 via-green-500 to-green-600"
+                    customColor="bg-light"
                 />
             </PinContainer>
         </div>
