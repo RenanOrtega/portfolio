@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, type ComponentType, type SVGProps } from "react";
-import { ExternalLink, ChevronRight } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 // const gradients = {
 //     purple: "from-purple-400 via-purple-500 to-purple-600",
