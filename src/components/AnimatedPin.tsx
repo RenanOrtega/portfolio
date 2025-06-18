@@ -16,7 +16,7 @@ const AnimatedPin = () => {
                 <CardPin
                     title="GitHub"
                     icon={GitHubIcon}
-                    customColor="bg-light text-dark"
+                    customColor="bg-dark text-light"
                 />
             </PinContainer>
             <PinContainer
@@ -26,7 +26,7 @@ const AnimatedPin = () => {
                 <CardPin
                     title="Linkedin"
                     icon={LinkedInIcon}
-                    customColor="bg-light text-dark"
+                    customColor="bg-dark text-light"
                 />
             </PinContainer>
             <PinContainer 
@@ -35,7 +35,7 @@ const AnimatedPin = () => {
                 <CardPin
                     title="WhatsApp"
                     icon={WhatsAppIcon}
-                    customColor="bg-light text-dark"
+                    customColor="bg-dark text-light"
                 />
             </PinContainer>
         </div>

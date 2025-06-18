@@ -10,7 +10,7 @@
 }
 
 @theme {
-  --color-dark: #0f0f0f;
+  --color-dark: #121313;
   --color-light: #e4e4e7;
   --color-primary: #7c3aed;
   --color-secondary: #a855f7;
@@ -132,4 +132,24 @@ h6 {
       transform: translate(calc(-50% - 0.5rem));
     }
   }
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }

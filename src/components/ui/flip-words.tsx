@@ -6,7 +6,7 @@ import { cn } from "../../lib/utils";
 export const FlipWords = ({
   words,
   duration = 3000,
-  className
+  className,
 }: {
   words: string[];
   duration?: number;
@@ -15,7 +15,6 @@ export const FlipWords = ({
   const [currentWord, setCurrentWord] = useState(words[0]);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
-  // thanks for the fix Julian - https://github.com/Julian-AT
   const startAnimation = useCallback(() => {
     const word = words[words.indexOf(currentWord) + 1] || words[0];
     setCurrentWord(word);
@@ -63,7 +62,6 @@ export const FlipWords = ({
         )}
         key={currentWord}
       >
-        {/* edit suggested by Sajal: https://x.com/DewanganSajal */}
         {currentWord.split(" ").map((word, wordIndex) => (
           <motion.span
             key={word + wordIndex}
@@ -75,7 +73,7 @@ export const FlipWords = ({
             }}
             className="inline-block whitespace-nowrap"
           >
-            {word.split("").map((letter, letterIndex) => (
+            {Array.from(word).map((letter, letterIndex) => (
               <motion.span
                 key={word + letterIndex}
                 initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}

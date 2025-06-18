@@ -34,8 +34,8 @@ const CardPin = ({
         : `bg-gradient-to-br ${gradients[gradient]}`;
 
     return (
-        <div className="flex basis-full flex-col tracking-tight text-slate-100/50 sm:basis-1/2 w-[10rem] h-[10rem] ">
-            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-slate-100">
+        <div className="flex basis-full flex-col tracking-tight sm:basis-1/2 w-[10rem] h-[10rem] ">
+            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-dark">
                 {title}
             </h3>
             <div

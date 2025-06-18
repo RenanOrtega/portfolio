@@ -31,7 +31,7 @@ const MobileSocialMedia = ({ title, icon: Icon, customColor = "bg-dark", imageSi
     const [isPressed, setIsPressed] = useState<boolean>(false);
 
     return (
-        <div className={`flex flex-col w-full px-10 `}>
+        <div className={`flex flex-col w-full px-10`}>
             <a
                 href={url}
                 target="_blank"
