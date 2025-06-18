@@ -8,8 +8,8 @@ type SectionDescriptionProps = {
 const SectionDescription = ({ description, title }: SectionDescriptionProps) => {
     return (
         <div className="flex flex-col gap-2 pb-10">
-            <UserCircle2 className="text-white" />
-            <p className="font-bold text-white">{title}</p>
+            <UserCircle2 className="text-light" />
+            <p className="font-bold text-light">{title}</p>
             <p className="text-gray-400 max-w-[300px]">{description}</p>
         </div>
     )

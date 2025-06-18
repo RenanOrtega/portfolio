@@ -9,6 +9,14 @@
   box-sizing: border-box;
 }
 
+@theme {
+  --color-dark: #0f0f0f;
+  --color-light: #e4e4e7;
+  --color-primary: #7c3aed;
+  --color-secondary: #a855f7;
+  --color-accent: #22d3ee;
+}
+
 * {
   margin: 0;
 }

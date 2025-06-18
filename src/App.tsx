@@ -9,14 +9,14 @@ import Testimonials from "./components/Testimonials"
 
 function App() {
   return (
-    <>
+    <div className="bg-dark">
       <section className="min-h-screen relative flex flex-col">
         <div className="absolute inset-0 w-full h-full z-0">
           <Silk
             speed={3}
             scale={0.8}
             color="#2D2D2D"
-            noiseIntensity={1.5}
+            noiseIntensity={0.5}
             rotation={0}
           />
         </div>
@@ -32,7 +32,7 @@ function App() {
       </section>
       <div>
 
-        <div className="mx-auto antialiased relative bg-neutral-900">
+        <div className="mx-auto antialiased relativ">
           {/* Projects Section */}
           {/* <section className="min-h-screen flex flex-col px-8 py-6 md:px-30" id="projects">
               <SectionDescription
@@ -59,7 +59,7 @@ function App() {
           </section>
 
           {/* Contact Section */}
-          <section className="min-h-screen flex flex-col justify-center" id="contact">
+          <section className="min-h-screen flex flex-col justify-center bg-light" id="contact">
             <Collaborate />
           </section>
         </div>
@@ -70,7 +70,7 @@ function App() {
         </div>
 
       </div>
-    </>
+    </div>
   )
 }
 

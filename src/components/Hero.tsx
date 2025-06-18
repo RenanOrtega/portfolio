@@ -5,10 +5,10 @@ const Hero = () => {
 
     return (
         <div className="flex flex-col gap-3 items-center justify-center text-center px-4">
-            <h2 id="teste" className="text-4xl md:text-6xl font-bold text-white">
+            <h2 id="teste" className="text-4xl md:text-6xl font-bold text-light">
                 Renan Johny Ortega
             </h2>
-            <div className="p-2 w-50 md:w-70 text-4xl md:text-6xl bg-white font-bold">
+            <div className="p-2 w-50 md:w-70 text-4xl md:text-6xl font-bold bg-primary">
                 <FlipWords words={words} />
             </div>
         </div>
