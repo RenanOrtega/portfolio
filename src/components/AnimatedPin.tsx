@@ -1,5 +1,8 @@
 "use client"
 
+import GitHubIcon from "../assets/github";
+import LinkedInIcon from "../assets/linkedin";
+import WhatsAppIcon from "../assets/whatsapp";
 import { PinContainer } from "./ui/3d-pin";
 import CardPin from "./ui/card-pin";
 
@@ -12,8 +15,8 @@ const AnimatedPin = () => {
             >
                 <CardPin
                     title="GitHub"
-                    iconPath="github.svg"
-                    customColor="bg-light"
+                    icon={GitHubIcon}
+                    customColor="bg-light text-dark"
                 />
             </PinContainer>
             <PinContainer
@@ -22,8 +25,8 @@ const AnimatedPin = () => {
             >
                 <CardPin
                     title="Linkedin"
-                    iconPath="linkedin.svg"
-                    customColor="bg-light"
+                    icon={LinkedInIcon}
+                    customColor="bg-light text-dark"
                 />
             </PinContainer>
             <PinContainer 
@@ -31,8 +34,8 @@ const AnimatedPin = () => {
                 href="https://wa.me/5511953318009">
                 <CardPin
                     title="WhatsApp"
-                    iconPath="whatsapp.svg"
-                    customColor="bg-light"
+                    icon={WhatsAppIcon}
+                    customColor="bg-light text-dark"
                 />
             </PinContainer>
         </div>

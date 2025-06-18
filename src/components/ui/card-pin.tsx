@@ -1,5 +1,7 @@
 "use client"
 
+import type { ComponentType, SVGProps } from "react";
+
 const gradients = {
     purple: "from-purple-500 via-purple-500 to-blue-500",
     green: "from-green-500 via-green-500 to-emerald-500",
@@ -13,7 +15,7 @@ const gradients = {
 
 interface CardPinProps {
     title: string;
-    iconPath: string;
+    icon: ComponentType<SVGProps<SVGSVGElement>>;
     iconSize?: number;
     gradient?: keyof typeof gradients;
     customColor?: string;
@@ -21,7 +23,7 @@ interface CardPinProps {
 
 const CardPin = ({
     title, 
-    iconPath, 
+    icon: Icon, 
     iconSize = 50, 
     gradient = "purple", 
     customColor
@@ -39,7 +41,7 @@ const CardPin = ({
             <div
                 className={`flex justify-center items-center flex-1 w-full rounded-lg mt-4 ${backgroundClass}`}
             >
-                <img src={iconPath} width={iconSize} height={iconSize} alt={title} />
+                <Icon width={iconSize} height={iconSize} />
             </div>
         </div>
     );
