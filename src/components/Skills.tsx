@@ -74,15 +74,15 @@ const Skills = () => {
 
     const selectedSkillData = skillsData.find(skill => skill.id === selectedSkill);
 
-    return (    
-        <div className={`transition-all duration-500 ease-out will-change-transform ${selectedSkill
-            ? 'lg:grid lg:grid-cols-5 lg:gap-8 lg:items-start'
+    return (
+        <div className={`relative transition-all duration-500 ease-out will-change-transform ${selectedSkill
+            ? 'grid grid-cols-5 gap-8 items-start'
             : 'flex flex-col'
             }`}>
 
             {/* Skills Container */}
             <div className={`transition-all duration-500 ease-out will-change-transform ${selectedSkill
-                ? 'lg:col-span-2 grid grid-cols-2 gap-4 lg:grid-cols-1 lg:gap-4'
+                ? 'col-span-2 grid grid-cols-1 gap-4'
                 : 'grid grid-cols-1 gap-5'
                 }`}>
                 {skillsData.map((skill) => (
@@ -100,7 +100,7 @@ const Skills = () => {
             </div>
 
             {/* Detail Panel */}
-            <div className={`lg:col-span-3 transition-all duration-400 ease-out will-change-transform ${selectedSkill && !isTransitioning
+            <div className={`col-span-3 transition-all duration-400 ease-out will-change-transform ${selectedSkill && !isTransitioning
                 ? 'opacity-100 translate-y-0 scale-100'
                 : 'opacity-0 translate-y-4 scale-98 lg:hidden'
                 }`}>

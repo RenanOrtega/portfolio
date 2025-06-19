@@ -39,7 +39,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <p className="text-gray-400 text-sm">
-                    © 2024 Seu Nome. Todos os direitos reservados.
+                    © {new Date().getFullYear()} Renan Johny Ortega. Todos os direitos reservados.
                 </p>
             </footer>
         </>

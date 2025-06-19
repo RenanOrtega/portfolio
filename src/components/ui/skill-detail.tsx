@@ -1,4 +1,3 @@
-import { X } from "lucide-react";
 import type { Skill } from "../Skills";
 
 interface SkillDetailProps {
@@ -7,57 +6,44 @@ interface SkillDetailProps {
     isVisible?: boolean;
 }
 
-const SkillDetail = ({ skill, onClose, isVisible = true }: SkillDetailProps) => {
-    const Icon = skill.icon;
-
+const SkillDetail = ({ skill, onClose, isVisible }: SkillDetailProps) => {
     return (
-        <div className={`bg-light backdrop-blur-md border rounded-3xl p-8 mt-8 lg:mt-0 flex flex-col gap-5 
-                        transition-all duration-400 ease-out will-change-transform
-                        ${isVisible
-                ? 'opacity-100 translate-y-0 scale-100'
-                : 'opacity-0 translate-y-4 scale-98'
+        <div className={`
+            bg-gradient-to-br from-light/10 to-light/5 backdrop-blur-md 
+            rounded-2xl border border-light/20 shadow-xl transition-all duration-500 ease-out
+            flex flex-col gap-7 p-6 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
             }`}>
-            {/* Header */}
-            <div className="flex items-start justify-between mb-6">
-                <div className="flex items-center gap-4">
-                    <Icon className="w-8 h-8 text-primary transition-all duration-300 ease-out" />
+            <div className="flex justify-between items-start mb-4">
+                <div className="flex items-center gap-3">
+                    <skill.icon className="w-8 h-8 text-primary" />
                     <div>
-                        <h3 className="text-3xl font-bold text-primary transition-all duration-300 ease-out">{skill.title}</h3>
+                        <h3 className="text-xl font-bold text-light">{skill.title}</h3>
+                        <p className="text-primary/70 font-medium">{skill.subTitle}</p>
                     </div>
                 </div>
                 <button
                     onClick={onClose}
-                    className="p-2 rounded-lg hover:bg-dark/20 transition-all duration-200 ease-out will-change-transform hover:scale-105"
+                    className="text-light/60 hover:text-light transition-colors duration-200 p-1"
                 >
-                    <X className="w-6 h-6 text-dark/60 hover:text-dark transition-colors duration-200 ease-out" />
+                    ✕
                 </button>
             </div>
 
-            {/* Experience */}
-            <div className="transition-all duration-300 ease-out">
-                <h4 className="text-xl font-semibold text-dark mb-3">Experience</h4>
-                <div className="bg-dark/10 rounded-xl p-4 border border-dark/10">
-                    <p className="text-dark/70">{skill.experience}</p>
-                </div>
+            <div className="flex items-center gap-2 text-light/70">
+                <div className="w-2 h-2 bg-accent rounded-full"></div>
+                <span>{skill.experience}</span>
             </div>
 
-            {/* Technologies */}
-            <div className="transition-all duration-300 ease-out">
-                <h4 className="text-xl font-semibold text-dark mb-4">Technologies & Tools</h4>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            <div className="mb-6">
+                <h4 className="text-light font-semibold mb-3">Technologies & Tools</h4>
+                <div className="flex flex-wrap gap-2">
                     {skill.technologies.map((tech, index) => (
-                        <div
+                        <span
                             key={index}
-                            className="bg-dark/10 rounded-lg p-3 border border-dark/20 text-center 
-                                     hover:bg-dark/20 transition-all duration-200 ease-out 
-                                     will-change-transform hover:scale-105 hover:shadow-md"
-                            style={{
-                                animationDelay: `${index * 50}ms`,
-                                animation: isVisible ? 'fadeInUp 0.4s ease-out forwards' : 'none'
-                            }}
+                            className="px-3 py-1 bg-primary/10 text-primary/80 rounded-full text-sm border border-primary/30"
                         >
-                            <span className="text-dark/90 font-medium">{tech}</span>
-                        </div>
+                            {tech}
+                        </span>
                     ))}
                 </div>
             </div>
