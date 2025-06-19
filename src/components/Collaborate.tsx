@@ -12,12 +12,10 @@ const Collaborate = () => {
                 Get in touch for projects or partnerships.
             </p>
             <div className="flex flex-col gap-5 items-center justify-center pt-5">
-                {/* Computador / Telas maiores */}
                 <div className="hidden md:block">
                     <AnimatedPin />
                 </div>
             </div>
-            {/* Mobile */}
             <div className="flex flex-col items-center gap-10 md:hidden w-full pt-5">
                 <MobileSocialMedia
                     title="GitHub"

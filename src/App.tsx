@@ -25,7 +25,7 @@ const Index = () => {
           <div className="px-8 py-6 md:px-30">
             <Navbar />
           </div>
-          {/* Hero ocupa o espaço restante */}
+          {/* Hero */}
           <div className="flex-1 flex items-center justify-center">
             <Hero />
           </div>
@@ -34,7 +34,7 @@ const Index = () => {
       <div>
         <div className="mx-auto antialiased relative">
 
-          {/* Projects Section - Descomente e use esta seção */}
+          {/* Projects Section */}
           <section className="min-h-screen flex flex-col px-8 py-16 md:px-30" id="projects">
             <div className="mb-16">
               <SectionDescription
@@ -62,7 +62,7 @@ const Index = () => {
           </section>
 
           {/* Skills Section */}
-          <section className="min-h-screen flex px-8 py-6 md:px-30" id="skills">
+          <section className="min-h-screen flex justify-center items-center px-8 py-6 md:px-30" id="skills">
             <div className="flex-1 pr-10">
               <Skills />
             </div>

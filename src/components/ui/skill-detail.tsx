@@ -10,8 +10,8 @@ const SkillDetail = ({ skill, onClose, isVisible }: SkillDetailProps) => {
     return (
         <div className={`
             bg-gradient-to-br from-light/10 to-light/5 backdrop-blur-md 
-            rounded-2xl border border-light/20 shadow-xl transition-all duration-500 ease-out
-            flex flex-col gap-7 p-6 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
+            rounded-2xl  shadow-xl transition-all duration-500 ease-out
+            flex flex-col gap-18 p-6 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
             }`}>
             <div className="flex justify-between items-start mb-4">
                 <div className="flex items-center gap-3">
