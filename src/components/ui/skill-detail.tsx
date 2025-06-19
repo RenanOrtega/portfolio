@@ -1,4 +1,4 @@
-import type { Skill } from "../Skills";
+import type { Skill } from "../../types/skills";
 
 interface SkillDetailProps {
     skill: Skill;
