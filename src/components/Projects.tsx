@@ -1,7 +1,8 @@
-import { Cloud, Code, Database, Server } from "lucide-react";
+import { Cloud, Code, Database, ExternalLink, Server } from "lucide-react";
 import GitHubIcon from "../assets/github";
 import type { Project } from "../types/project";
 import { projectsData } from "../data/projects";
+import { useState } from "react";
 
 const getCategoryIcon = (category: string) => {
     switch (category) {
@@ -17,69 +18,108 @@ const getCategoryIcon = (category: string) => {
 };
 
 const ProjectCard = ({ project }: { project: Project }) => {
+    const [isHovered, setIsHovered] = useState(false);
+
     return (
-        <div className={`group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md rounded-2xl border border-white/20 overflow-hidden transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/10}`}>
-            <div className="relative h-48 overflow-hidden">
+        <div
+            className={`group relative bg-gradient-to-br from-light/5 to-light/5 backdrop-blur-xl border-4 border-dark rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-dark/70 hover:border-light/40 h-full flex flex-col`}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            {/* Efeito de brilho no hover */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-light/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-out" />
+
+            {/* Container da imagem com espaçamento */}
+            <div className="relative h-48 overflow-hidden p-2">
                 <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                    className="w-full h-full object-cover rounded-xl transition-transform duration-700 ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                {/* Overlay com gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300 rounded-xl" />
+
+                {/* Links flutuantes */}
+                <div className={`absolute top-4 right-4 flex gap-2 transition-all duration-300 ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
+                    <a href={project.github} className="p-2 bg-dark/60 backdrop-blur-sm rounded-full hover:bg-dark/80 transition-colors">
+                        <GitHubIcon className="w-4 h-4 text-light" />
+                    </a>
+                    <a href={project.demo} className="p-2 bg-dark/60 backdrop-blur-sm rounded-full hover:bg-dark/80 transition-colors">
+                        <ExternalLink className="w-4 h-4 text-light" />
+                    </a>
+                </div>
             </div>
 
-            <div className="p-6 flex flex-col gap-3">
-                <div className="flex items-center gap-2 mb-3">
-                    <div className="flex items-center gap-1 px-2 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs">
-                        {getCategoryIcon(project.category)}
-                        <span className="capitalize font-medium">{project.category}</span>
-                    </div>
+            <div className="flex flex-col gap-3 p-5 flex-1">
+                <div className="inline-flex w-fit gap-2 px-3 py-1.5 rounded-full bg-primary border border-light/10 text-sm font-medium text-light">
+                    {getCategoryIcon(project.category)}
+                    <span className="capitalize">{project.category}</span>
                 </div>
 
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
+                <h3 className="text-xl font-bold text-light">
                     {project.title}
                 </h3>
 
-                <p className="text-white/70 mb-4 leading-relaxed text-sm">
+                <p className="text-light/70 text-sm leading-relaxed">
                     {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-2 mt-auto">
                     {project.technologies.map((tech, index) => (
                         <span
                             key={index}
-                            className="px-2 py-1 bg-white/10 text-white/80 rounded-md text-xs font-medium border border-white/20 hover:border-blue-400/50 transition-colors duration-300"
+                            className="px-2 py-1 text-xs bg-dark/60 text-light/70 rounded-md border border-light/10 hover:bg-dark/80 transition-colors"
                         >
                             {tech}
                         </span>
                     ))}
                 </div>
-
-                <div className="flex gap-3">
-                    <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-all duration-300 ease-out hover:scale-105 border border-white/20 hover:border-white/40"
-                    >
-                        <GitHubIcon className="w-4 h-4" />
-                        <span className="text-sm font-medium">Code</span>
-                    </a>
-                </div>
             </div>
-
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
         </div>
     );
 };
 
 const Projects = () => {
+    const [filter, setFilter] = useState('all');
+
+    const categories = ['all', 'frontend', 'backend', 'fullstack', 'cloud'];
+
+    const filteredProjects = filter === 'all'
+        ? projectsData
+        : projectsData.filter(project => project.category === filter);
+
     return (
         <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {projectsData.map((project) => (
-                    <ProjectCard key={project.id} project={project} />
+            <div className="flex flex-wrap justify-center gap-4 pb-10">
+                {categories.map((category) => (
+                    <button
+                        key={category}
+                        onClick={() => setFilter(category)}
+                        className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${filter === category
+                            ? 'bg-primary text-light border-secondary shadow-lg shadow-primary/40'
+                            : 'bg-dark text-light border-light/20 hover:bg-dark/80 hover:border-light/10 cursor-pointer'
+                            }`}
+                    >
+                        <span className="capitalize">{category === 'all' ? 'Todos' : category}</span>
+                    </button>
                 ))}
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
+                {filteredProjects.map((project) => (
+                    <div key={project.id} className="h-full">
+                        <ProjectCard project={project} />
+                    </div>
+                ))}
+
+                {filteredProjects.length === 0 && (
+                    <div className="text-center py-16">
+                        <div className="text-6xl mb-4">🔍</div>
+                        <h3 className="text-xl font-semibold text-light mb-2">Nenhum projeto encontrado</h3>
+                        <p className="text-light/40">Tente selecionar um filtro diferente.</p>
+                    </div>
+                )}
             </div>
         </div>
     );

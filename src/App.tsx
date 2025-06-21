@@ -1,3 +1,4 @@
+import FadeContent from "./Animations/FadeContent/FadeContent";
 import Silk from "./blocks/Backgrounds/Silk/Silk";
 import Collaborate from "./components/Collaborate";
 import Footer from "./components/Footer";
@@ -42,7 +43,13 @@ const Index = () => {
                 description="A selection of my favorite work, focusing on impactful, modern solutions that demonstrate my passion for creating exceptional digital experiences."
               />
             </div>
-            <Projects />
+            <FadeContent 
+              blur={true} 
+              duration={1000} 
+              easing="ease-out" 
+              initialOpacity={0.2}>
+              <Projects />
+            </FadeContent>
           </section>
 
           {/* Testimonials Section */}
