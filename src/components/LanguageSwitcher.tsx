@@ -25,12 +25,15 @@ const LanguageSwitcher = () => {
         <div className="relative">
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="flex items-center gap-2 px-2.5 py-1.5 rounded-full border bg-dark text-light border-light/20 hover:bg-dark/80 hover:border-light/10 transition-all text-sm font-medium"
+                className="flex items-center gap-2 px-2.5 py-1.5 rounded-full border bg-dark text-light border-light/20 hover:bg-dark/80 hover:border-light/10 transition-all text-sm font-medium min-w-0"
             >
-                <currentLangData.flag className="w-5 h-5" />
-                <span>{currentLangData.label}</span>
+                <currentLangData.flag className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                <span className="hidden sm:inline">{currentLangData.label}</span>
+                <span className="sm:hidden text-xs font-bold uppercase">
+                    {currentLangData.code}
+                </span>
                 <svg
-                    className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                    className={`w-3 h-3 sm:w-4 sm:h-4 transition-transform flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -41,21 +44,21 @@ const LanguageSwitcher = () => {
 
             {/* Dropdown */}
             {isOpen && (
-                <div className="absolute top-full left-0 mt-2 w-full min-w-[160px] bg-dark border border-light/20 rounded-lg shadow-lg overflow-hidden z-10">
+                <div className="absolute top-full right-0 mt-2 w-40 sm:w-full sm:min-w-[160px] bg-dark border border-light/20 rounded-lg shadow-lg overflow-hidden z-50">
                     {languages.map((language) => (
                         <button
                             key={language.code}
                             onClick={() => changeLanguage(language.code)}
-                            className={`w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-light/10 transition-colors text-sm
+                            className={`w-full flex items-center gap-3 px-3 py-2.5 sm:px-4 sm:py-3 text-left hover:bg-light/10 transition-colors text-sm
                                 ${currentLanguage === language.code
                                     ? 'bg-primary/20 text-primary border-l-2 border-primary'
                                     : 'text-light'
                                 }`}
                         >
-                            <language.flag className="w-5 h-5" />
-                            <span>{language.label}</span>
+                            <language.flag className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                            <span className="truncate">{language.label}</span>
                             {currentLanguage === language.code && (
-                                <svg className="w-4 h-4 ml-auto text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-auto text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                 </svg>
                             )}
@@ -67,7 +70,7 @@ const LanguageSwitcher = () => {
             {/* Overlay para fechar ao clicar fora */}
             {isOpen && (
                 <div
-                    className="fixed inset-0 z-0"
+                    className="fixed inset-0 z-40"
                     onClick={() => setIsOpen(false)}
                 />
             )}
