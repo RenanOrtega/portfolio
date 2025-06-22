@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import FadeContent from "./Animations/FadeContent/FadeContent";
 import Silk from "./blocks/Backgrounds/Silk/Silk";
 import Collaborate from "./components/Collaborate";
@@ -7,9 +8,12 @@ import Navbar from "./components/Navbar";
 import Projects from "./components/Projects"; // <- Adicione esta importação
 import SectionDescription from "./components/SectionDescription";
 import Skills from "./components/Skills";
+import './i18n';
 import Testimonials from "./components/Testimonials";
 
 const Index = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="bg-dark">
       <section className="min-h-screen relative flex flex-col">
@@ -36,17 +40,17 @@ const Index = () => {
         <div className="mx-auto antialiased relative">
 
           {/* Projects Section */}
-          <section className="min-h-screen flex flex-col px-8 py-16 md:px-30" id="projects">
+          <section className="min-h-screen flex flex-col px-8 py-16 md:px-30" id={t('nav.projects')}>
             <div className="mb-16">
               <SectionDescription
-                title="Projects"
-                description="A selection of my favorite work, focusing on impactful, modern solutions that demonstrate my passion for creating exceptional digital experiences."
+                title={t('projects.title')}
+                description={t('projects.description')}
               />
             </div>
-            <FadeContent 
-              blur={true} 
-              duration={1000} 
-              easing="ease-out" 
+            <FadeContent
+              blur={true}
+              duration={1000}
+              easing="ease-out"
               initialOpacity={0.2}>
               <Projects />
             </FadeContent>
@@ -57,31 +61,38 @@ const Index = () => {
             <div className="flex flex-col antialiased relative overflow-hidden">
               <div className="flex justify-center px-8 py-10 md:px-30">
                 <SectionDescription
-                  title="Testimonials"
+                  title={t('testimonials.title')}
                   description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 Phasellus blandit tortor vitae est porta sollicitudin. Ut varius orci ac purus congue, vel varius ligula aliquam. Etiam non porta elit. Aenean tempus nibh nec velit varius luctus."
                 />
               </div>
               <div className="flex justify-center">
-                <Testimonials />
+                <Testimonials
+                  direction="left"
+                  speed="slow"
+                />
               </div>
+              <Testimonials
+                direction="right"
+                speed="slow"
+              />
             </div>
           </section>
 
           {/* Skills Section */}
-          <section className="min-h-screen flex justify-center items-center px-8 py-6 md:px-30" id="skills">
+          <section className="min-h-screen flex justify-center items-center px-8 py-6 md:px-30" id={t('nav.skills')}>
             <div className="flex-1 pr-10">
               <Skills />
             </div>
             <SectionDescription
-              title="Skills"
+              title={t('skills.title')}
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 Phasellus blandit tortor vitae est porta sollicitudin. Ut varius orci ac purus congue, vel varius ligula aliquam. Etiam non porta elit. Aenean tempus nibh nec velit varius luctus."
             />
           </section>
 
           {/* Contact Section */}
-          <section className="min-h-screen flex flex-col justify-center bg-light" id="contact">
+          <section className="min-h-screen flex flex-col justify-center bg-light" id={t('nav.contact')}>
             <Collaborate />
           </section>
         </div>

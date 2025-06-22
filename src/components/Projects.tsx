@@ -3,6 +3,7 @@ import GitHubIcon from "../assets/github";
 import type { Project } from "../types/project";
 import { projectsData } from "../data/projects";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const getCategoryIcon = (category: string) => {
     switch (category) {
@@ -19,6 +20,7 @@ const getCategoryIcon = (category: string) => {
 
 const ProjectCard = ({ project }: { project: Project }) => {
     const [isHovered, setIsHovered] = useState(false);
+    const { t } = useTranslation();
 
     return (
         <div
@@ -33,7 +35,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             <div className="relative h-48 overflow-hidden p-2">
                 <img
                     src={project.image}
-                    alt={project.title}
+                    alt={t(`projects.items.${project.id}.title`)}
                     className="w-full h-full object-cover rounded-xl transition-transform duration-700 ease-out"
                 />
 
@@ -54,15 +56,17 @@ const ProjectCard = ({ project }: { project: Project }) => {
             <div className="flex flex-col gap-3 p-5 flex-1">
                 <div className="inline-flex w-fit gap-2 px-3 py-1.5 rounded-full bg-primary border border-light/10 text-sm font-medium text-light">
                     {getCategoryIcon(project.category)}
-                    <span className="capitalize">{project.category}</span>
+                    <span className="capitalize">
+                        {t(`projects.filter.${project.category}`)}
+                    </span>
                 </div>
 
                 <h3 className="text-xl font-bold text-light">
-                    {project.title}
+                    {t(`projects.items.${project.id}.title`)}
                 </h3>
 
                 <p className="text-light/70 text-sm leading-relaxed">
-                    {project.description}
+                    {t(`projects.items.${project.id}.description`)}
                 </p>
 
                 <div className="flex flex-wrap gap-2 mt-auto">
@@ -82,6 +86,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
 const Projects = () => {
     const [filter, setFilter] = useState('all');
+    const { t } = useTranslation();
 
     const categories = ['all', 'frontend', 'backend', 'fullstack', 'cloud'];
 
@@ -101,10 +106,11 @@ const Projects = () => {
                             : 'bg-dark text-light border-light/20 hover:bg-dark/80 hover:border-light/10 cursor-pointer'
                             }`}
                     >
-                        <span className="capitalize">{category === 'all' ? 'Todos' : category}</span>
+                        <span className="capitalize">{t(`projects.filter.${category}`)}</span>
                     </button>
                 ))}
             </div>
+
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
                 {filteredProjects.map((project) => (
@@ -116,8 +122,12 @@ const Projects = () => {
                 {filteredProjects.length === 0 && (
                     <div className="text-center py-16">
                         <div className="text-6xl mb-4">🔍</div>
-                        <h3 className="text-xl font-semibold text-light mb-2">Nenhum projeto encontrado</h3>
-                        <p className="text-light/40">Tente selecionar um filtro diferente.</p>
+                        <h3 className="text-xl font-semibold text-light mb-2">
+                            {t('projects.noProject.title')}
+                        </h3>
+                        <p className="text-light/40">
+                            {t('projects.noProject.description')}
+                        </p>
                     </div>
                 )}
             </div>

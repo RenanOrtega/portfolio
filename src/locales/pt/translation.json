@@ -1,0 +1,89 @@
+{
+    "nav": {
+        "projects": "Projetos",
+        "skills": "Habilidades",
+        "contact": "Contato"
+    },
+    "hero": {
+        "words": [
+            "Construir",
+            "Código",
+            "Lançar"
+        ]
+    },
+    "projects": {
+        "title": "Projetos",
+        "description": "Uma seleção dos meus trabalhos favoritos, com foco em soluções impactantes e modernas que demonstram minha paixão por criar experiências digitais excepcionais.",
+        "filter": {
+            "all": "Todos",
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "fullstack": "Fullstack",
+            "cloud": "Nuvem"
+        },
+        "items": {
+            "ecommerce": {
+                "title": "Plataforma de E-Commerce",
+                "description": "Solução full-stack de e-commerce com React, Node.js e PostgreSQL."
+            },
+            "task": {
+                "title": "App de Gerenciamento de Tarefas",
+                "description": "Aplicativo moderno de gerenciamento de tarefas com atualizações em tempo real e colaboração."
+            },
+            "weather": {
+                "title": "Painel meteorológico",
+                "description": "Lindo painel de clima com previsões baseadas em localização, mapas interativos e análises meteorológicas detalhadas."
+            }
+        },
+        "noProject": {
+            "title": "Nenhum projeto encontrado",
+            "description": "Tente selecionar um filtro diferente."
+        }
+    },
+    "testimonials": {
+        "title": "Testemunhos",
+        "items": {
+            "1": {
+                "quote": "Foi o melhor dos tempos, foi o pior dos tempos, foi a era da sabedoria, foi a era da tolice, foi a época da crença, foi a época da incredulidade, foi a estação da Luz, foi a estação das Trevas, foi a primavera da esperança, foi o inverno do desespero."
+            },
+            "2": {
+                "quote": "Ser ou não ser, eis a questão: se é mais nobre para a mente sofrer os golpes e flechas de uma fortuna ultrajante, ou pegar em armas contra um mar de problemas e, opondo-se a eles, acabar: morrer ou dormir."
+            },
+            "3": {
+                "quote": "Tudo o que vemos ou parecemos não passa de um sonho dentro de um sonho."
+            }
+        }
+    },
+    "skills": {
+        "title": "Habilidades",
+        "frontend": {
+            "title": "Frontend",
+            "experience": "Mais de 3 anos construindo aplicações web modernas",
+            "techTitle": "Tecnologias e ferramentas"
+        },
+        "backend": {
+            "title": "Backend",
+            "experience": "Mais de 4 anos em desenvolvimento do lado do servidor",
+            "techTitle": "Tecnologias e ferramentas"
+        },
+        "cloud": {
+            "title": "Nuvem",
+            "experience": "Mais de 2 anos em infraestrutura de nuvem",
+            "techTitle": "Tecnologias e ferramentas"
+        },
+        "databases": {
+            "title": "Banco de dados",
+            "experience": "Mais de 3 anos em design de banco de dados",            
+            "techTitle": "Tecnologias e ferramentas"
+        }
+    },
+    "collaborate": {
+        "title": "Vamos colaborar.",
+        "subTitle": "Entre em contato para projetos ou parcerias."
+    },
+    "footer": {
+        "projects": "Projetos",
+        "skills": "Habilidades",
+        "contact": "Contato"
+    }
+}

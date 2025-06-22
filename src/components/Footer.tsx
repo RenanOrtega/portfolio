@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 const Footer = () => {
+    const { t } = useTranslation();
+
     return (
         <>
             <footer className="w-full mt-auto">
@@ -7,17 +11,17 @@ const Footer = () => {
                     <div className="flex flex-col md:flex-row gap-10">
                         <div className="flex flex-col">
                             <p className="font-semibold mb-2 text-light">Portfolio</p>
-                            <a href="#projects" 
+                            <a href={`#${t('nav.projects')}`}
                                 className="text-gray-600 font-semibold hover:text-gray-400 transition-colors">
-                                Projects
+                                {t('footer.projects')}
                             </a>
-                            <a href="#skills" 
+                            <a href={`#${t('nav.skills')}`} 
                                 className="text-gray-600 font-semibold hover:text-gray-400 transition-colors">
-                                Skills
+                                {t('footer.skills')}
                             </a>
-                            <a href="#contact" 
+                            <a href={`#${t('nav.contact')}`}
                                 className="text-gray-600 font-semibold hover:text-gray-400 transition-colors">
-                                Contact
+                                {t('footer.contact')}
                             </a>
                         </div>
                         <div className="flex flex-col">

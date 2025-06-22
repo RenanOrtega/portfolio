@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { cn } from "../../lib/utils";
+import { useTranslation } from "react-i18next";
 
 export const InfiniteMovingCards = ({
   items,
@@ -11,7 +12,7 @@ export const InfiniteMovingCards = ({
   className,
 }: {
   items: {
-    quote: string;
+    id: string;
     name: string;
     title: string;
     imagePath: string;
@@ -23,7 +24,8 @@ export const InfiniteMovingCards = ({
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
-
+  const { t } = useTranslation();
+  
   useEffect(() => {
     addAnimation();
   }, []);
@@ -116,7 +118,7 @@ export const InfiniteMovingCards = ({
 
               {/* Quote */}
               <span className="relative z-20 text-sm leading-[1.6] font-normal text-neutral-800 dark:text-gray-100">
-                {item.quote}
+                {t(`testimonials.items.${item.id}.quote`)}
               </span>
             </blockquote>
           </li>

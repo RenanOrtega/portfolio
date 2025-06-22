@@ -1,0 +1,89 @@
+{
+    "nav": {
+        "projects": "Projects",
+        "skills": "Skills",
+        "contact": "Contact"
+    },
+    "hero": {
+        "words": [
+            "Build",
+            "Code",
+            "Launch"
+        ]
+    },
+    "projects": {
+        "title": "Projects",
+        "description": "A selection of my favorite work, focusing on impactful, modern solutions that demonstrate my passion for creating exceptional digital experiences.",
+        "filter": {
+            "all": "All",
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "fullstack": "Fullstack",
+            "cloud": "Cloud"
+        },
+        "items": {
+            "ecommerce": {
+                "title": "E-Commerce Platform",
+                "description": "Full-stack e-commerce solution with React, Node.js, and PostgreSQL."
+            },
+            "task": {
+                "title": "Task Management App",
+                "description": "Modern task management application with real-time updates and collaboration."
+            },
+            "weather": {
+                "title": "Weather Dashboard",
+                "description": "Beautiful weather dashboard with location-based forecasts, interactive maps, and detailed weather analytics."
+            }
+        },
+        "noProject": {
+            "title": "No projects found",
+            "description": "Try selecting a different filter."
+        }
+    },
+    "testimonials": {
+        "title": "Testimonials",
+        "items": {
+            "1": {
+                "quote": "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair."
+            },
+            "2": {
+                "quote": "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep."
+            },
+            "3": {
+                "quote": "All that we see or seem is but a dream within a dream."
+            }
+        }
+    },
+    "skills": {
+        "title": "Skills",
+        "frontend": {
+            "title": "Frontend",
+            "experience": "3+ years building modern web applications",
+            "techTitle": "Technologies & Tools"
+        },
+        "backend": {
+            "title": "Backend",
+            "experience": "4+ years in server-side development",
+            "techTitle": "Technologies & Tools"
+        },
+        "cloud": {
+            "title": "Cloud",
+            "experience": "2+ years in cloud infrastructure",
+            "techTitle": "Technologies & Tools"
+        },
+        "databases": {
+            "title": "Databases",
+            "experience": "3+ years in database design",
+            "techTitle": "Technologies & Tools"
+        }
+    },
+    "collaborate": {
+        "title": "Let's collaborate.",
+        "subTitle": "Get in touch for projects or partnerships."
+    },
+    "footer": {
+        "projects": "Projects",
+        "skills": "Skills",
+        "contact": "Contact"
+    }
+}

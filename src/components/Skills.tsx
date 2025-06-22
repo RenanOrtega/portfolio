@@ -2,10 +2,12 @@ import { useState } from "react";
 import SkillItem from "./ui/skill-item";
 import SkillDetail from "./ui/skill-detail";
 import { skillsData } from "../data/skills";
+import { useTranslation } from "react-i18next";
 
 const Skills = () => {
     const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
     const [isTransitioning, setIsTransitioning] = useState(false);
+    const { t } = useTranslation();
 
     const handleSkillClick = (skillId: string) => {
         if (isTransitioning) return;
@@ -36,7 +38,7 @@ const Skills = () => {
                 {skillsData.map((skill) => (
                     <SkillItem
                         key={skill.id}
-                        title={skill.title}
+                        title={t(`skills.${skill.id}.title`)}
                         subTitle={skill.subTitle}
                         icon={skill.icon}
                         isSelected={selectedSkill === skill.id}

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import GitHubIcon from "../assets/github";
 import LinkedInIcon from "../assets/linkedin";
 import WhatsAppIcon from "../assets/whatsapp";
@@ -5,11 +6,13 @@ import AnimatedPin from "./AnimatedPin";
 import MobileSocialMedia from "./ui/mobile-social-media";
 
 const Collaborate = () => {
+    const { t } = useTranslation();
+
     return (
         <div className="flex flex-col justify-center gap-5 items-center py-30">
-            <h3 className="text-4xl font-bold text-primary">Let's collaborate.</h3>
+            <h3 className="text-4xl font-bold text-primary">{t('collaborate.title')}</h3>
             <p className="text-dark text-3xl text-center">
-                Get in touch for projects or partnerships.
+                {t('collaborate.subTitle')}
             </p>
             <div className="flex flex-col gap-5 items-center justify-center pt-5">
                 <div className="hidden md:block">

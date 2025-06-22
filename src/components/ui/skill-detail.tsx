@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import type { Skill } from "../../types/skills";
 
 interface SkillDetailProps {
@@ -7,6 +8,8 @@ interface SkillDetailProps {
 }
 
 const SkillDetail = ({ skill, onClose, isVisible }: SkillDetailProps) => {
+    const { t } = useTranslation();
+
     return (
         <div className={`
             bg-gradient-to-br from-light/10 to-light/5 backdrop-blur-md 
@@ -17,7 +20,7 @@ const SkillDetail = ({ skill, onClose, isVisible }: SkillDetailProps) => {
                 <div className="flex items-center gap-3">
                     <skill.icon className="w-8 h-8 text-primary" />
                     <div>
-                        <h3 className="text-xl font-bold text-light">{skill.title}</h3>
+                        <h3 className="text-xl font-bold text-light">{t(`skills.${skill.id}.title`)}</h3>
                         <p className="text-primary/70 font-medium">{skill.subTitle}</p>
                     </div>
                 </div>
@@ -31,11 +34,11 @@ const SkillDetail = ({ skill, onClose, isVisible }: SkillDetailProps) => {
 
             <div className="flex items-center gap-2 text-light/70">
                 <div className="w-2 h-2 bg-accent rounded-full"></div>
-                <span>{skill.experience}</span>
+                <span>{t(`skills.${skill.id}.experience`)}</span>
             </div>
 
             <div className="mb-6">
-                <h4 className="text-light font-semibold mb-3">Technologies & Tools</h4>
+                <h4 className="text-light font-semibold mb-3">{t(`skills.${skill.id}.techTitle`)}</h4>
                 <div className="flex flex-wrap gap-2">
                     {skill.technologies.map((tech, index) => (
                         <span

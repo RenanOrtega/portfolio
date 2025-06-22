@@ -1,11 +1,13 @@
 import { useState } from "react";
 import HeroWord from "./ui/hero-word";
+import { useTranslation } from "react-i18next";
 
-const words = ["Build", "Code", "Launch"];
 
 const Hero = () => {
     const [activeIndex, setActiveIndex] = useState<number>(0);
     const [hoverIndex, setHoverIndex] = useState<number | null>(null);
+    const { t } = useTranslation();
+    const words = t('hero.words', { returnObjects: true}) as string[];
 
     const handleMouseEnter = (index: number) => {
         setHoverIndex(index);
