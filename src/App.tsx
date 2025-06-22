@@ -27,12 +27,21 @@ const Index = () => {
           />
         </div>
         <div className="relative z-10 flex flex-col h-full min-h-screen">
-          <div className="px-8 py-6 md:px-30">
+          <div className="px-5 py-6 md:px-15">
             <Navbar />
           </div>
           {/* Hero */}
           <div className="flex-1 flex items-center justify-center">
             <Hero />
+          </div>
+          <div className="flex px-5 py-6 md:px-15">
+            <a
+              className="text-light px-4 py-1.5 bg-dark border-2 rounded-lg hover:border-primary hover:scale-105 transition-all"
+              href="/certificate.pdf"
+              target="_blank"
+            >
+              {t('cv.download')}
+            </a>
           </div>
         </div>
       </section>
@@ -40,26 +49,27 @@ const Index = () => {
         <div className="mx-auto antialiased relative">
 
           {/* Projects Section */}
-          <section className="min-h-screen flex flex-col px-8 py-16 md:px-30" id={t('nav.projects')}>
-            <div className="mb-16">
-              <SectionDescription
-                title={t('projects.title')}
-                description={t('projects.description')}
-              />
+          <section className="min-h-screen flex flex-col px-5 py-16 md:px-15" id={t('nav.projects')}>
+            <SectionDescription
+              title={t('projects.title')}
+              description={t('projects.description')}
+            />
+            <div className="flex justify-center">
+              <FadeContent
+                blur={true}
+                duration={1000}
+                easing="ease-out"
+                initialOpacity={0.2}
+              >
+                <Projects />
+              </FadeContent>
             </div>
-            <FadeContent
-              blur={true}
-              duration={1000}
-              easing="ease-out"
-              initialOpacity={0.2}>
-              <Projects />
-            </FadeContent>
           </section>
 
           {/* Testimonials Section */}
           <section className="min-h-screen">
             <div className="flex flex-col antialiased relative overflow-hidden">
-              <div className="flex justify-center px-8 py-10 md:px-30">
+              <div className="flex justify-center px-5 py-10 md:px-15">
                 <SectionDescription
                   title={t('testimonials.title')}
                   description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -80,7 +90,7 @@ const Index = () => {
           </section>
 
           {/* Skills Section */}
-          <section className="min-h-screen flex justify-center items-center px-8 py-6 md:px-30" id={t('nav.skills')}>
+          <section className="min-h-screen flex justify-center items-center px-5 py-6 md:px-15" id={t('nav.skills')}>
             <div className="flex-1 pr-10">
               <Skills />
             </div>
@@ -98,7 +108,7 @@ const Index = () => {
         </div>
 
         {/* Footer */}
-        <div className="bg-neutral-950 px-8 py-6 md:px-30">
+        <div className="bg-neutral-950 px-5 py-6 md:px-15">
           <Footer />
         </div>
       </div>

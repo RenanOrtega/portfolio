@@ -11,6 +11,9 @@
             "Launch"
         ]
     },
+    "cv": {
+        "download": "Download Resume"
+    },
     "projects": {
         "title": "Projects",
         "description": "A selection of my favorite work, focusing on impactful, modern solutions that demonstrate my passion for creating exceptional digital experiences.",

@@ -11,6 +11,9 @@
             "Lançar"
         ]
     },
+    "cv": {
+        "download": "Baixar currículo"
+    },
     "projects": {
         "title": "Projetos",
         "description": "Uma seleção dos meus trabalhos favoritos, com foco em soluções impactantes e modernas que demonstram minha paixão por criar experiências digitais excepcionais.",
@@ -73,7 +76,7 @@
         },
         "databases": {
             "title": "Banco de dados",
-            "experience": "Mais de 3 anos em design de banco de dados",            
+            "experience": "Mais de 3 anos em design de banco de dados",
             "techTitle": "Tecnologias e ferramentas"
         }
     },
