@@ -24,7 +24,7 @@ const Hero = () => {
                 <h2 className="text-5xl md:text-8xl font-bold text-light">
                     Renan Johny Ortega
                 </h2>
-                <div className="flex gap-10">
+                <div className="flex lg:gap-10 md:gap-8 gap-4">
                     {words.map((word, index) => {
                         const isActive = hoverIndex !== null ? hoverIndex === index : activeIndex === index;
 
