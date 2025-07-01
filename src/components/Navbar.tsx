@@ -15,7 +15,7 @@ const Navbar = () => {
     };
 
     return (
-        <header className="flex justify-between items-center relative">
+        <header className="fixed top-0 left-0 w-full z-[9999] backdrop-blur-md bg-dark/60  flex justify-between items-center px-4 py-3">
             <h1 className="font-bold text-lg text-light">
                 Renan<span className="text-xs">®</span>
             </h1>
@@ -34,7 +34,7 @@ const Navbar = () => {
                 <LanguageSwitcher />
             </nav>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile */}
             <div className="md:hidden flex items-center gap-3">
                 <LanguageSwitcher />
                 <button
@@ -57,16 +57,10 @@ const Navbar = () => {
                 </button>
             </div>
 
-            {/* Mobile Navigation Menu */}
+            {/* Mobile Menu */}
             {isMenuOpen && (
                 <>
-                    {/* Overlay */}
-                    <div
-                        className="fixed inset-0 bg-black/50 z-40 md:hidden"
-                        onClick={closeMenu}
-                    />
-                    
-                    {/* Mobile Menu */}
+                    <div className="fixed inset-0 bg-black/50 z-40 md:hidden" onClick={closeMenu} />
                     <nav className="absolute top-full right-0 mt-2 w-48 bg-dark border border-light/20 rounded-lg shadow-lg z-50 md:hidden">
                         <div className="py-2">
                             <a

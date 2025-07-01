@@ -95,7 +95,7 @@ const Projects = () => {
         : projectsData.filter(project => project.category === filter);
 
     return (
-        <div className="max-w-7xl mx-auto">
+        <div>
             <div className="flex flex-wrap justify-center gap-4 pb-10">
                 {categories.map((category) => (
                     <button

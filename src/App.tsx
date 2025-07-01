@@ -15,9 +15,10 @@ const Index = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="bg-dark overflow-x-hidden"> {/* Adiciona overflow-x-hidden */}
+    <div className="bg-dark overflow-x-hidden">
       <section className="min-h-screen relative flex flex-col">
-        <div className="absolute inset-0 w-full h-full z-0 overflow-hidden"> {/* Adiciona overflow-hidden */}
+
+        <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
           <Silk
             speed={3}
             scale={0.8}
@@ -26,15 +27,17 @@ const Index = () => {
             rotation={0}
           />
         </div>
-        <div className="relative z-10 flex flex-col h-full min-h-screen">
-          <div className="px-4 py-6 sm:px-6 md:px-8 lg:px-15"> {/* Padding responsivo mais controlado */}
+
+        <div className="relative z-10 flex flex-col h-full min-h-screen pt-20">
+          <div className="px-4 py-6 sm:px-6 md:px-8 lg:px-15">
             <Navbar />
           </div>
-          {/* Hero */}
-          <div className="flex-1 flex items-center justify-center px-4 sm:px-6"> {/* Adiciona padding horizontal */}
+
+          <div className="flex-1 flex items-center justify-center px-4 sm:px-6">
             <Hero />
           </div>
-          <div className="flex px-4 py-6 sm:px-6 md:px-8 lg:px-15"> {/* Padding responsivo */}
+
+          <div className="flex px-4 py-6 sm:px-6 md:px-8 lg:px-15">
             <a
               className="text-light px-4 py-1.5 bg-dark border-2 rounded-lg hover:border-primary hover:scale-105 transition-all"
               href="/certificate.pdf"
@@ -42,36 +45,38 @@ const Index = () => {
             >
               {t('cv.download')}
             </a>
+
           </div>
         </div>
+
       </section>
 
-      <div className="overflow-x-hidden"> {/* Container com overflow controlado */}
-        <div className="mx-auto antialiased relative max-w-full"> {/* Adiciona max-w-full */}
+      <div className="overflow-x-hidden">
+        <div className="mx-auto antialiased relative max-w-full">
 
-          {/* Projects Section */}
-          <section className="min-h-screen flex flex-col px-4 py-16 sm:px-6 md:px-8 lg:px-15" id={t('nav.projects')}>
+          <section className="min-h-screen flex items-center lg:items-start flex-col px-4 py-16 sm:px-6 md:px-8 lg:px-15" id={t('nav.projects')}>
             <SectionDescription
               title={t('projects.title')}
               description={t('projects.description')}
             />
-            <div className="flex justify-center overflow-hidden"> {/* Adiciona overflow-hidden */}
+
+            <div className="flex overflow-hidden">
               <FadeContent
                 blur={true}
                 duration={1000}
                 easing="ease-out"
                 initialOpacity={0.2}
               >
-                <div className="w-full max-w-full"> {/* Container com largura controlada */}
-                  <Projects />
-                </div>
+                <Projects />
               </FadeContent>
             </div>
+
           </section>
 
-          {/* Testimonials Section */}
-          <section className="min-h-screen overflow-hidden"> {/* Adiciona overflow-hidden */}
+          <section className="pt-20 overflow-hidden">
+
             <div className="flex flex-col antialiased relative">
+
               <div className="flex justify-center px-4 py-10 sm:px-6 md:px-8 lg:px-15">
                 <SectionDescription
                   title={t('testimonials.title')}
@@ -79,48 +84,44 @@ const Index = () => {
                 Phasellus blandit tortor vitae est porta sollicitudin. Ut varius orci ac purus congue, vel varius ligula aliquam. Etiam non porta elit. Aenean tempus nibh nec velit varius luctus."
                 />
               </div>
-              <div className="flex justify-center overflow-hidden"> {/* Controla overflow dos testimonials */}
+
+              <div className="flex justify-center">
                 <Testimonials
                   direction="left"
                   speed="slow"
                 />
               </div>
-              <div className="overflow-hidden"> {/* Controla overflow dos testimonials */}
-                <Testimonials
-                  direction="right"
-                  speed="slow"
-                />
-              </div>
+
             </div>
+
           </section>
 
-          {/* Skills Section - Layout responsivo melhorado */}
           <section className="min-h-screen flex flex-col lg:flex-row justify-center items-center px-4 py-6 sm:px-6 md:px-8 lg:px-15 gap-8" id={t('nav.skills')}>
-            {/* SectionDescription primeiro no mobile, segundo no desktop */}
-            <div className="w-full lg:w-auto lg:max-w-md lg:order-2"> {/* order-2 no desktop */}
+
+            <div className="lg:order-2">
               <SectionDescription
                 title={t('skills.title')}
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                   Phasellus blandit tortor vitae est porta sollicitudin. Ut varius orci ac purus congue, vel varius ligula aliquam. Etiam non porta elit. Aenean tempus nibh nec velit varius luctus."
               />
             </div>
-            {/* Skills segundo no mobile, primeiro no desktop */}
-            <div className="w-full lg:flex-1 lg:pr-8 lg:order-1"> {/* order-1 no desktop */}
+
+            <div className="w-full lg:flex-1 lg:pr-8 lg:order-1">
               <Skills />
             </div>
+
           </section>
 
-
-          {/* Contact Section */}
           <section className="min-h-screen flex flex-col justify-center bg-light overflow-hidden" id={t('nav.contact')}>
             <Collaborate />
           </section>
+
         </div>
 
-        {/* Footer */}
         <div className="bg-neutral-950 px-4 py-6 sm:px-6 md:px-8 lg:px-15">
           <Footer />
         </div>
+
       </div>
     </div>
   )
