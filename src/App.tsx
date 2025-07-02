@@ -40,7 +40,7 @@ const Index = () => {
           <div className="flex px-4 py-6 sm:px-6 md:px-8 lg:px-15">
             <a
               className="text-light px-4 py-1.5 bg-dark border-2 rounded-lg hover:border-primary hover:scale-105 transition-all"
-              href="/certificate.pdf"
+              href={t('cv.pdf')}
               target="_blank"
             >
               {t('cv.download')}

@@ -12,6 +12,7 @@
         ]
     },
     "cv": {
+        "pdf": "/cv-renan-en.pdf",
         "download": "Download Resume"
     },
     "projects": {
