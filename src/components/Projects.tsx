@@ -96,7 +96,7 @@ const Projects = () => {
 
     return (
         <div>
-            <div className="flex flex-wrap justify-center gap-4 pb-10">
+            <div className="flex flex-wrap justify-center gap-3 pb-10">
                 {categories.map((category) => (
                     <button
                         key={category}
@@ -111,14 +111,14 @@ const Projects = () => {
                 ))}
             </div>
 
-
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
                 {filteredProjects.map((project) => (
-                    <div key={project.id} className="h-full">
+                    <div key={project.id}>
                         <ProjectCard project={project} />
                     </div>
                 ))}
-
+            </div>
+            <div className="flex justify-center">
                 {filteredProjects.length === 0 && (
                     <div className="text-center py-16">
                         <div className="text-6xl mb-4">🔍</div>
@@ -134,5 +134,6 @@ const Projects = () => {
         </div>
     );
 };
+
 
 export default Projects;

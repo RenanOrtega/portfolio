@@ -54,13 +54,15 @@ const Index = () => {
       <div className="overflow-x-hidden">
         <div className="mx-auto antialiased relative max-w-full">
 
-          <section className="min-h-screen flex items-center lg:items-start flex-col px-4 py-16 sm:px-6 md:px-8 lg:px-15" id={t('nav.projects')}>
-            <SectionDescription
-              title={t('projects.title')}
-              description={t('projects.description')}
-            />
+          <section className="min-h-screen px-4 py-16 sm:px-6 md:px-8 lg:px-15" id={t('nav.projects')}>
+            <div className="flex items-center lg:items-start flex-col">
+              <SectionDescription
+                title={t('projects.title')}
+                description={t('projects.description')}
+              />
+            </div>
 
-            <div className="flex overflow-hidden">
+            <div className="overflow-hidden">
               <FadeContent
                 blur={true}
                 duration={1000}
@@ -70,7 +72,6 @@ const Index = () => {
                 <Projects />
               </FadeContent>
             </div>
-
           </section>
 
           <section className="pt-20 overflow-hidden">
